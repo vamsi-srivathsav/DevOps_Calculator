@@ -1,8 +1,8 @@
 ---
-- name: Pull docker image of Calculator
+- name: Pull and Run docker image
   hosts: all
   tasks:
-    - name: Pull image
+    - name: Pull vamsisrivathsav/calculator
       docker_image:
         name: vamsisrivathsav/calculator
         source: pull
