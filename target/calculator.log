@@ -1,0 +1,4 @@
+2021-03-13 14:11:25.774 [main] INFO  calculator.Calculator - [FACTORIAL of] - 5.0
+2021-03-13 14:11:25.778 [main] INFO  calculator.Calculator - [RESULT : FACTORIAL] - 120.0
+2021-03-13 14:11:50.185 [main] INFO  calculator.Calculator - [FACTORIAL of] - 6.0
+2021-03-13 14:11:50.185 [main] INFO  calculator.Calculator - [RESULT : FACTORIAL] - 720.0

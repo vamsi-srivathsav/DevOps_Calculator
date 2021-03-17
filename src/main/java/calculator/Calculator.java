@@ -16,7 +16,7 @@ public class Calculator {
 
         Calculator calculator = new Calculator();
         Scanner scanner = new Scanner(System.in);
-        double number1, number2;
+        double num, num1, num2;
         do {
             System.out.println("Calculator-DevOps, Choose to perform operation");
             System.out.print("Press 1 to find factorial\nPress 2 to find Square root\nPress 3 to find power\nPress 4 to find natural logarithm\n" +
@@ -30,82 +30,83 @@ public class Calculator {
 
             switch (choice) {
                 case 1:
-                    // do factorial
+                    // factorial
                     System.out.print("Enter a number : ");
-                    number1 = scanner.nextDouble();
-                    System.out.println("Factorial of "+number1+" is : " + calculator.factoral(number1));
+                    num = scanner.nextDouble();
+                    System.out.println("Factorial of "+num+" is : " + calculator.findFactorial(num));
                     System.out.println("\n");
 
                     break;
                 case 2:
                     // find square root
                     System.out.print("Enter a number : ");
-                    number1 = scanner.nextDouble();
-                    System.out.println("Square root of "+number1+" is : " + calculator.sqroot(number1));
+                    num  = scanner.nextDouble();
+                    System.out.println("Square root of "+num+" is : " + calculator.findSquareRoot(num));
                     System.out.println("\n");
 
 
                     break;
                 case 3:
-                    // find power
+                    // power
                     System.out.print("Enter the first number : ");
-                    number1 = scanner.nextDouble();
+                    num1 = scanner.nextDouble();
                     System.out.print("Enter the second number : ");
-                    number2 = scanner.nextDouble();
-                    System.out.println(number1+ " raised to power "+number2+" is : " + calculator.power(number1, number2));
+                    num2 = scanner.nextDouble();
+                    System.out.println(num1+ " raised to power "+num2+" is : " + calculator.findPower(num1, num2));
                     System.out.println("\n");
                     break;
                 case 4:
                     // find natural log
                     System.out.print("Enter a number : ");
-                    number1 = scanner.nextDouble();
-                    System.out.println("Natural log of "+number1+" is : " + calculator.naturalLog(number1));
+                    num1 = scanner.nextDouble();
+                    System.out.println("Natural log of "+num1+" is : " + calculator.findNaturalLog(num1));
                     System.out.println("\n");
 
                     break;
                 default:
                     System.out.println("Exiting....");
+                    System.out.println("\n");
                     return;
             }
         } while (true);
     }
 
 
-    public double factoral(double number1) {
-        logger.info("[FACTORIAL] - " + number1);
-        double result = fact(number1);
-        logger.info("[RESULT - FACTORIAL] - " + result);
+    public double findFactorial(double num) {
+        logger.info("[FACTORIAL of] - " + num);
+        double result = fact(num);
+        logger.info("[RESULT : FACTORIAL] - " + result);
         return result;
     }
 
 
 
-    public double sqroot(double number1) {
-        logger.info("[SQ ROOT] - " + number1);
-        double result = Math.sqrt(number1);
-        logger.info("[RESULT - SQ ROOT] - " + result);
+    public double findSquareRoot(double num) {
+        logger.info("[SQUARE ROOT] - " + num);
+        double result = Math.sqrt(num);
+        logger.info("[RESULT - SQUARE ROOT] - " + result);
         return result;
     }
 
 
-    public double power(double number1, double number2) {
-        logger.info("[POWER - " + number1 + " RAISED TO] " + number2);
-        double result = Math.pow(number1,number2);
+    public double findPower(double num1, double num2) {
+        logger.info("[POWER - " + num1 + " RAISED TO] " + num2);
+        double result = Math.pow(num1,num2);
         logger.info("[RESULT - POWER] - " + result);
         return result;
     }
 
-    public double naturalLog(double number1) {
-        logger.info("[NATURAL LOG] - " + number1);
+    public double findNaturalLog(double num) {
+        logger.info("[NATURAL LOG] - " + num);
         double result = 0;
         try {
 
-            if (number1 <0 ) {
+            if (num <0 ) {
                 result = Double.NaN;
                 throw new ArithmeticException("Case of NaN 0.0/0.0");
             }
              else {
-                result = Math.log(number1);
+                result = Math.log(num);
             }
         } catch (ArithmeticException error) {
             System.out.println("[EXCEPTION - LOG] - Cannot find log of negative numbers " + error.getLocalizedMessage());
